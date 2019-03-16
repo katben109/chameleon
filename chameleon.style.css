@@ -1,3 +1,8 @@
+/*
+DESIGN - Visual Design (We liked the column parameters in the example webkit css files, but not other things,
+so we imported the column parameters into our own css file, and then found other specific styling parameters online.)
+*/
+
 .container {
     position:relative;
     width:100%;
@@ -37,14 +42,21 @@
     .two.columns {
         width:13.3333333333%
     }
-
+/*
+DESIGN - Typography (complementary serif and sans-serif fonts to establish a sense of history in the button texts (with
+serif font options, and a sense of currency in the contemporary text syntax)
+*/
 font-family: 'Cormorant Garamond', serif;
 font-family: 'Cormorant', serif;
 
 font-family: 'Nunito Sans', sans-serif;
 font-family: 'Barlow', sans-serif;
 
-
+/*
+DESIGN - Visual Design (See also note at top of js and html files: We intentionally maintain a grey
+scale color scheme to replicate the color blindness of chameleons, and to give the different typography textures
+more visual weight. We are, though, selectively changing some button and button text colors.)
+*/
 #bttnHappy{
     color: #555;
     background-color: white;

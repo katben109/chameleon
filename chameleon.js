@@ -1,7 +1,17 @@
-// Simulation Variables
+// FUNCTIONALITY - (Simulation) Variables
 /////////////////////
 // Config
+
 var shouldDebug = true;
+
+// FUNCTIONALITY - Variables +
+// INTERACTIVITY - Different Outcomes, Visible Variables contributing to Visible Changes
+// Our Chameleon poem in two parts,
+// which build on each other while also recursively referring back to each other.
+// The intent is to "complicate" the conventional binary of happy v sad through the metaphor
+// of a chameleon, which--like all chameleons--is color-blind. This is why we stayed with a
+// grey-scale pallette.
+
 var PoemA = new Poem(
   "Happy Chameleon",
   "Anonymous",
@@ -28,6 +38,8 @@ var PoemB = new Poem(
   ]
 );
 
+//// FUNCTIONALITY - Variables
+// INTERACTIVITY - (contributing to) Visible Changes and Console Output
 // State
 var timeStep = 0;
 var chosenPoem;
@@ -36,7 +48,7 @@ var chosenPoem;
 var initialized = false;
 var simState;
 
-
+// FUNCTIONALITY - Variable Changes
 // Starting Function
 /////////////////////
 $(document).ready(function() {
@@ -48,7 +60,9 @@ $(document).ready(function() {
   });  
 });
 
-// State Machine ////
+// FUNCTIONALITY - Variable Changes
+// INTERACTIVITY - Visible Changes
+// Creates the State Machine and sets up the variable state changes.
 ///////////////////////////////////////////////
 var StateMachine = function(){
   this.states = { // Add/Remove States Here
@@ -86,7 +100,9 @@ var StateMachine = function(){
     }
   }
   // Down to here
-  this.Debug = function () { // Edit this function with important variables from your code
+
+  // INTERACTIVITY -  Console Output
+  this.Debug = function () {
     console.log("-------------------------");
     console.log("timeStep = " + timeStep);
     console.log("----------------");
@@ -95,6 +111,9 @@ var StateMachine = function(){
   };
 };
 
+// FUNCTIONALITY - Variables, Variable Changes
+// INTERACTIVITY - Visible variables, Visible Changes, Console Output
+// Initializes and sets rules for machine.
 var Init = function (machine) {
   this.name = this.constructor.name;
   var fsm = machine;
@@ -126,7 +145,8 @@ var Init = function (machine) {
   };
 };
 
-
+// FUNCTIONALITY - Variables, Variable Changes (Lines of Poem),
+// INTERACTIVITY - (Calling) Visible variables for Visible Changes (Lines of Poem)
 var Line1= function (machine) {
   this.name = this.constructor.name;
   this.line = 0;
@@ -144,7 +164,6 @@ var Line1= function (machine) {
     if (shouldDebug) console.log("---- " + this.name + " Update");
     $("#target").fadeOut(function () {
       fsm.Change(fsm.states["Line2"]);
-
 
       if (callback !== undefined) callback();
     });
@@ -168,14 +187,12 @@ var Line2 = function (machine) {
     DrawInID("#target", chosenPoem.lines[this.line]);
     $("#target").fadeIn();
 
-
     if (callback !== undefined) callback();
   };
   this.Update = function (callback) {
     if (shouldDebug) console.log("---- " + this.name + " Update");
     $("#target").fadeOut(function() {
       fsm.Change(fsm.states["Line3"]);
-
 
       if (callback !== undefined) callback();
     });
@@ -304,9 +321,11 @@ var Line6= function (machine) {
     if (callback !== undefined) callback();
   };
 };
-// Helpers /////////
-///////////////////////////////////////////////
-// I put misc functions that are used in many different places in a group I just called Helper
+
+
+// FUNCTIONALITY - Variable Changes
+// INTERACTIVITY - Visible Changes, Different Outcomes
+// Creates the interactive decision functionality and updates states based on the interactor's choices
 function PickPoem(choice) {
   chosenPoem = choice;
   simState.Update();
