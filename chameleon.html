@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Chameleon</title>
+    <meta name="description" content="6313 GATech class example">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+
+    <link rel="stylesheet" href="chameleon.style.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Cormorant|Cormorant+Garamond|Nunito+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div id="pick" class="row">
+        <button id="bttnHappy" class="HappySadClass" onclick="PickPoem(PoemA)">Happy</button>
+        <button id="bttnSad" class="HappySadClass" onclick="PickPoem(PoemB)">Sad</button>
+      </div>
+      <div id="input" class="row">
+        <p id="target" class="poemClass"></p>
+      </div>
+       <button id="bttn" class="TellMeClass">Tell me more.</button>
+    </div>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="chameleon.js"></script>
+</html>
