@@ -6,7 +6,7 @@ so we imported the column parameters into our own css file, and then found other
 .container {
     position:relative;
     width:100%;
-    max-width:960px;
+    max-width:400px;
     margin:0 auto;
     padding:0 20px;
     box-sizing:border-box
@@ -80,6 +80,7 @@ more visual weight. We are, though, selectively changing some button and button 
     background-color: transparent;
     top: 100px;
     height: 38px;
+    width: 150px;
     padding: 0 30px;
     text-align: center;
     font-weight: 200;
@@ -89,7 +90,7 @@ more visual weight. We are, though, selectively changing some button and button 
     white-space: nowrap;
     border-radius: 4px;
     outline: 0;
-    border: 1px solid #bbb;
+    border: 1px solid #555;
     cursor: pointer;
     box-sizing: border-box;
 }
